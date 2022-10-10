@@ -7,7 +7,6 @@ def solution(num):
             num = num / 2;
         elif num % 2 == 1:
             num = num * 3 + 1;
-
         if i == 500:
             return -1
         elif num == 1:
