@@ -5,4 +5,4 @@ for i in range(10, 0, -1):
         num = n // 10 ** (i - 1);
         NumStr = str(num);
         a.append(int(NumStr[-1]));
-        print(sum(a));
+print(sum(a));
