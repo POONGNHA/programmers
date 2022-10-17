@@ -19,5 +19,4 @@ arr3 = list()
 for i in range(0, len(arr1)):
     arr3.append([x + y for x, y in zip(arr1[i] , arr2[i])])
 
-# print(arr3)
-return arr3
+# return arr3

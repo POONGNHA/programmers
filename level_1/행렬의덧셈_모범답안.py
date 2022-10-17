@@ -1,14 +1,15 @@
-# [[c + d for c, d in zip(a, b)] for a, b in zip(A,B)]
+
+# 1
+def sumMatrix(A,B):
+    answer = [[c + d for c, d in zip(a, b)] for a, b in zip(A,B)]
+    return answer
+
+# 2
+def sumMatrix(A,B):
+    return [list(map(sum, zip(*x))) for x in zip(A, B)]
 
 
 
-
-
-# arr3 = [1, 2]
-# arr4 = [2, 3]
-# print(*[x for x in zip(arr1,arr2)])      # result = [(1, 2), (2, 3)]
-# print([a+b for a,b in zip(arr3,arr4)])  # result = [3, 5]
-# print([[x+y for x, y in zip(a,b)] for a, b in zip(arr1,arr2)])
 
 arr1 = [[1, 2], [2, 3]]
 arr2 = [[3, 4], [5, 6]]
