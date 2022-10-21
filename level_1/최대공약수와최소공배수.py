@@ -11,18 +11,25 @@
 # 2	5	[1, 10]
 
 
-
 # 약수 만들기
 # 제일 큰 공통된 약수 만들기
 
 def solution(n, m):
-    result1 = set([i for i in range(1,(n+1)//2) if n % i == 0])
-    result2 = set([i for i in range(1,(m+1)//2) if m % i == 0])
-    result_final = list(result1.intersection(result2))
+    # result1 = set([i for i in range(1,(n+1)//2) if n % i == 0])
+    # result2 = set([i for i in range(1,(m+1)//2) if m % i == 0])
+    # result_final = list(result1.intersection(result2))
+
+    # 최대공약수(GCD) : 유클리드 호제법 사용
+    if n > m :
+        n, m = m, n
 
 
 
 
-    return [result_final]
+
+    # 최소공배수(LCM) : n * m = 최대공약수 * 최소공배수
+
+
+    return []
 
 print(solution(3,12))
