@@ -1,8 +1,19 @@
-def solution(arr):
-    answer = []
-    for i in range(0,len(arr)-1): # 0~7
-        if arr[i] != arr[i+1]: # 0,1 이 같으면
-            answer.append(i)
-    return answer
+# def solution(ingredient):
+#     answer = 0
+#     return answer
 
-print(solution([1,1,3,3,0,1,1]))
+
+
+
+def solution(ingredient):
+    burger = [1, 2, 3, 1]
+    cnt = 0
+    if len(ingredient) < 4 :
+        return 0
+    else:
+        for i in range(0, len(ingredient)-3):
+            if ingredient[i:i+4] == burger: # 0, 1, 2, 3,
+                cnt += 1
+        return cnt
+
+print(solution([1,2,3,1]))

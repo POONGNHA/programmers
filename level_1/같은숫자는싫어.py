@@ -13,12 +13,8 @@
 # [1,1,3,3,0,1,1]	[1,3,0,1]
 # [4,4,4,3,3]	[4,3]
 
-
+                                w
 def solution(arr):
-    answer = []
-    for i in range(0,len(arr)):
-        if arr[i] != arr[i+1]:
-            answer.append(arr[i])
-    return answer
+    return [arr[i] for i in range(0,len(arr)-1) if arr[i] != arr[i+1]]+[arr[-1]]
 
 print(solution([1,1,3,3,0,1,1]))
