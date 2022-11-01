@@ -15,7 +15,7 @@ def solution(array):
     for i in array:
         a.append(array.count(i))
     if max(a) == a.count(max(a)):
-        return max(a)
+        return array[a.index(max(a))]
     else:
         return -1
 
