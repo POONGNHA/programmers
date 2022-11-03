@@ -8,4 +8,4 @@
 
 |분류|주제|함수|설명|
 
-[콜라문제](https://github.com/POONGNHA/programmers/blob/master/level_1/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C.py)
+|PYTHON|콜라문제|[소스코드](https://github.com/POONGNHA/programmers/blob/master/level_1/%EC%BD%9C%EB%9D%BC%EB%AC%B8%EC%A0%9C.py)| 등차수열을 이용하여 푸는 문제
