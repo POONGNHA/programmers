@@ -47,6 +47,7 @@ def solution(food):
 
 print(solution([1, 3, 4, 6]	))
 
+
 # 오류
 # reversed를 사용해야 하는데 이게 오류가 걸림
 # __reversed__를 사용하니 오류가 없어졌다
