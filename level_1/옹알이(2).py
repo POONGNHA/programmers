@@ -12,8 +12,9 @@
 
 # 유추파악
 # 반복문으로 babbling의 원소를 본다
-# 그 원소에 aya, ye, woo, ma가 있는지 확인함
-# 2개의 available_babbling이 연속해서 붙어있는 원소는 세지 않는다.
+# 2개의 available_babbling이 연속해서 붙어있는 원소는 빼버린다.
+# 나머지 원소 String 형태를 꺼낸다.
+# aya, ye, woo, ma로만 이루어져 있는가 슬라이싱으로 확인하고 더 붙어있는 문자가 있으면 세지 않는다.
 # 발음할수 있는 원소의 갯수를 리턴한다.
 
 # 변수선언
@@ -26,4 +27,5 @@
 # babbling	result
 # ["aya", "yee", "u", "maa"]	1
 # ["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]	2
+
 
