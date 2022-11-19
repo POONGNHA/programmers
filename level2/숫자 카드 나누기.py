@@ -52,34 +52,38 @@
 # 나의 풀이
 # def solution(arrayA, arrayB):
     # 가장 작은수의 약수를 배열에 담는다.
-def solution(arrayA, arrayB):
-    arrayA_minNumber_divisor = [i for i in range(2, min(arrayA)+ 1) if min(arrayA) % i == 0 ];
-    arrayB_minNumber_divisor = [i for i in range(2, min(arrayB) + 1) if min(arrayB) % i == 0];
-    # inputArray에서 제일작은 수를 제거한다.
-    arrayA.remove(min(arrayA))
-    arrayB.remove(min(arrayB))
-    # A입력배열의 원소들이 나누어 지는지 확인한다.
-    for inputElementA in arrayA :
-        for divisors in arrayA_minNumber_divisor :
-            if inputElementA % divisors != 0:
-                arrayA_minNumber_divisor.remove(divisors)
-    # 다른 입력배열을 나누지 못하는지 확인한다.
-    for inputElementB in arrayB :
-        for divisors in arrayA_minNumber_divisor :
-            if inputElementB % divisors == 0:
-                return 0
-    # B입력배열의 원소들이 나누어 지는지 확인한다.
-        for inputElement in arrayB :
-            for divisors in arrayB_minNumber_divisor :
-                if inputElement % divisors != 0:
-                    arrayB_minNumber_divisor.remove(divisors)
-    # 다른 입력배열을 나누지 못하는지 확인한다.
-    for inputElement in arrayA :
+arrayA = [10, 20]
+arrayB = [5, 17]
+arrayA_minNumber_divisor = [i for i in range(1, min(arrayA)+ 1) if min(arrayA) % i == 0 ];
+arrayB_minNumber_divisor = [i for i in range(1, min(arrayB) + 1) if min(arrayB) % i == 0];
+# inputArray에서 제일작은 수를 제거한다.
+arrayA.remove(min(arrayA))
+arrayB.remove(min(arrayB))
+# A입력배열의 원소들이 나누어 지는지 확인한다.
+for inputElementA in arrayA :
+    for divisors in arrayA_minNumber_divisor :
+        if inputElementA % divisors != 0:
+            arrayA_minNumber_divisor.remove(divisors)
+# 다른 입력배열을 나누지 못하는지 확인한다.
+for inputElementB in arrayB :
+    for divisors in arrayA_minNumber_divisor :
+        if inputElementB % divisors == 0:
+            arrayA_minNumber_divisor.remove(divisors)
+# B입력배열의 원소들이 나누어 지는지 확인한다.
+    for inputElement in arrayB :
         for divisors in arrayB_minNumber_divisor :
-            if inputElement % divisors == 0:
-                return 0
-    # 2개의 약수의 리스트를 합해서 비어있다면 0을 리턴하고, 아니라면 최대값을 출력한다.
-    if (arrayB_minNumber_divisor + arrayB_minNumber_divisor) == 0:
-        return 0
-    else:
-        return max(arrayA_minNumber_divisor + arrayB_minNumber_divisor)
+            if inputElement % divisors != 0:
+                arrayB_minNumber_divisor.remove(divisors)
+# 다른 입력배열을 나누지 못하는지 확인한다.
+for inputElement in arrayA :
+    for divisors in arrayB_minNumber_divisor :
+        if inputElement % divisors == 0:
+            arrayB_minNumber_divisor.remove(divisors)
+# 2개의 약수의 리스트를 합해서 비어있다면 0을 리턴하고, 아니라면 최대값을 출력한다.
+if (arrayB_minNumber_divisor + arrayB_minNumber_divisor) == 0:
+    print(0)
+else:
+    print(max(arrayA_minNumber_divisor + arrayB_minNumber_divisor))
+
+# 틀린부분
+# input array에서 제일 작은 자기자신의 수를 빼는것을 까먹음
