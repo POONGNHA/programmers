@@ -23,18 +23,18 @@
 # arrayA와 arrayB에는 중복된 원소가 있을 수 있습니다.
 
 # 풀이유추
-# 제일 작은 수의 약수를 찾는다.
-# 그 약수로 그 배열의 원소들을 일일히 나누어 보았을때 나머지가 0이어야 한다.
-# 그 수로 또다른 배열의 원소들을 나누었을 때 나머지가 0 이외의 것이어야만 한다.
-# 두 배열에 똑같이 시행하여 약수를 찾는다.
-# 나온 약수중 제일 큰 수를 반환한다.
-# 찾을 수 없다면 0을 선언한다.
+# 1. 입력배열A의 약수들이 원소가 되는 리스트를 만든다.
+# 2. 입력배열A의 가장 작은 숫자를 제외한 나머지 원소들을 1에서 만든 배열의 가장 큰 숫자가 나눌 수 있고,
+# 입력배열B의 원소들을 나눌수 없는지 확인한다.
+# 3. 큰숫자부터 제일 작은 숫자까지 1의 배열의 원소들을 다 찾아보고, 빈 배열이 된다면 0을 리턴한다.
+# 4. 빈 배열이 아니라면 B까지 똑같이 실행한 후에 더 큰수를 return한다.
 
 # 변수 선언
-# input : arr1, arr2
-# arrayA_minNumber_divisor, arrayB_minNumber_divisor : 제일 작은 수의 약수들을 담는다.
-# divisor_collectionA, B : 공통약수이며, 나눌 수 없는 약수들을 담는다.
-# output : no declaration
+# input : arrayA, B
+# div_A, B : 약수의 집합
+# fit_divA, B : 조건에 fit한 divisor라면 이 배열에 집어넣음
+# max_a, b = 제일 큰 숫자
+# output :
 
 # 테스트 케이스
 # arrayA	arrayB	result
@@ -42,65 +42,72 @@
 # [10, 20]	[5, 17]	10
 # [14, 35, 119]	[18, 30, 102]	7
 
-# 프로그래밍 순서
-# 주어진 배열에서 가장 작은 수를 찾고,
-# 그것의 약수를 하나의 배열에 담는다.
-# 그 배열의 원소들을 input Array의 다른 요소들로 나누어 나머지가 0이 되는지 확인한다.
-# 그 배열에서 가장 큰 값을 리턴한다.
-# 배열이 비었다면 0을 리턴한다.
-
 # 나의 풀이
-
-    # 가장 작은수의 약수를 배열에 담는다.
+import copy
 from math import sqrt
 
 def solution(arrayA, arrayB):
-# arrayA = [14, 35, 119]
-# arrayB = [18, 30, 102]
-    arrayA_minNumber_divisor = []
+    # arrayA = [14, 35, 119]
+    # arrayB = [18, 30, 102]
+    # 1. 약수를 담은 리스트를 만든다.
+    div_A = list()
+    div_B = list()
+    fit_divA = list()
+    fit_divB = list()
+    # 약수 구하기
     for i in range(1, int(sqrt(min(arrayA)))):
         if min(arrayA) % i == 0:
-            arrayA_minNumber_divisor.append(i)
-            arrayA_minNumber_divisor.append(min(arrayA) // i)
-    arrayB_minNumber_divisor = []
-    for i in range(1,  int(sqrt(min(arrayB)))):
+            div_A.append(i)
+            div_A.append(min(arrayA) // i)
+    # 2. 가장 작은 원소를 제외한 다른 원소들을 div_a의 제일 큰 숫자가 나눌수 있어야한다.
+    # 큰 원소부터 / 1 빼주기
+    div_A.sort(reverse=True)
+    div_A.pop()
+    # 입력배열 A의 제일 작은 원소의 약수들이 arrayA의 나머지 원소들의 약수가 되는가?
+    # 입력배열 B는 약수로 나누었을때 나누어지지 않는가?
+    fit_divA = copy.deepcopy(div_A)
+    for m in div_A:
+        passFlag = True
+        for j in arrayA:
+            if j % m != 0:
+                fit_divA.remove(m)
+                passFlag = False
+                break
+        if passFlag:
+            for k in arrayB:
+                if k % m == 0:
+                    fit_divA.remove(m)
+                    break
+    # B도 똑같이 구해준다
+    for i in range(1, int(sqrt(min(arrayB)))):
         if min(arrayB) % i == 0:
-            arrayB_minNumber_divisor.append(i)
-            arrayB_minNumber_divisor.append(min(arrayB) // i)
-    # A입력배열의 원소들이 나누어 지는지 확인한다.
-    for inputElementA in arrayA :
-        if inputElementA != min(arrayA):
-            for divisors in arrayA_minNumber_divisor :
-                if inputElementA % divisors != 0:
-                    arrayA_minNumber_divisor.remove(divisors)
-    # 다른 입력배열을 나누지 못하는지 확인한다.
-    for inputElementB in arrayB :
-        for divisors in arrayA_minNumber_divisor :
-            if inputElementB % divisors == 0 and divisors != 1:
-                return 0
-    # B입력배열의 원소들이 나누어 지는지 확인한다.
-        for inputElement in arrayB :
-            if inputElement != min(arrayB):
-                for divisors in arrayB_minNumber_divisor :
-                    if inputElement % divisors != 0 :
-                        arrayB_minNumber_divisor.remove(divisors)
-    # 다른 입력배열을 나누지 못하는지 확인한다.
-    for inputElement in arrayA :
-        for divisors in arrayB_minNumber_divisor :
-            if inputElement % divisors == 0 and divisors != 1:
-                return 0
-    # 2개의 약수의 리스트를 합해서 비어있다면 0을 리턴하고, 아니라면 최대값을 출력한다.
-    if (arrayB_minNumber_divisor + arrayB_minNumber_divisor) == 0:
+            div_B.append(i)
+            div_B.append(min(arrayB) // i)
+    div_B.sort(reverse=True)
+    div_B.pop()
+    fit_divB = copy.deepcopy(div_B)
+    for m in div_B:
+        passFlag = True
+        for j in arrayB:
+            if j % m != 0:
+                fit_divB.remove(m)
+                passFlag = False
+                break
+        if passFlag:
+            for k in arrayA:
+                if k % m == 0:
+                    fit_divB.remove(m)
+                    break
+    # fit_div 리스트 2개를 합쳐서 제일 큰 값을 리턴하고, 없다면 0을 리턴
+    if not fit_divA + fit_divB:
         return 0
     else:
-        return max(arrayA_minNumber_divisor + arrayB_minNumber_divisor)
-
+        return max(fit_divA + fit_divB)
 
 # 틀린부분
-# input array에서 제일 작은 자기자신의 수를 빼는것을 빼먹음
-# 또다른 입력배열을 나누면 그대로 0을 리턴해야하는것을 빼먹음
-# if문에서 그냥 []을 처리할때 +를 사용하면 되는 것이었음
-# 나머지는 //가 아니고 %임
-# 시간복잡도 처리 필요
-# 약수를 최적으로 구하는 법 : 루트 N까지 약수를 구한다음,그 약수들로 N을 나누어주고 그 몫을 추가해주면
-# 그것이 약수가 된다.
+# 나머지는 //가 아니고 %임 (매일 착각함)
+# 시간복잡도 처리 필요 => 약수문제는 제곱근을 이용해서 풀자
+# for문의 횟수를 지정하는 변수는 그 for문 내에서 수정하지 말자
+# copy.deepcopy와 shallow copy를 구분하자
+# 약수를 구하는 문제에서는 자기 자신의 숫자와 1의 취급을 항상 생각하자
+#
