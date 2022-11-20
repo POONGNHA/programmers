@@ -110,4 +110,3 @@ def solution(arrayA, arrayB):
 # for문의 횟수를 지정하는 변수는 그 for문 내에서 수정하지 말자
 # copy.deepcopy와 shallow copy를 구분하자
 # 약수를 구하는 문제에서는 자기 자신의 숫자와 1의 취급을 항상 생각하자
-#
