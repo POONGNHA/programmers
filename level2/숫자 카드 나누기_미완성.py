@@ -52,15 +52,13 @@ def solution(arrayA, arrayB):
     # 1. 약수를 담은 리스트를 만든다.
     div_A = list()
     div_B = list()
-    fit_divA = list()
-    fit_divB = list()
     # 약수 구하기
     for i in range(1, int(sqrt(min(arrayA)))):
         if min(arrayA) % i == 0:
             div_A.append(i)
             div_A.append(min(arrayA) // i)
     # 2. 가장 작은 원소를 제외한 다른 원소들을 div_a의 제일 큰 숫자가 나눌수 있어야한다.
-    # 큰 원소부터 / 1 빼주기
+    # 큰 원소부터, 1 빼주기
     div_A.sort(reverse=True)
     div_A.pop()
     # 입력배열 A의 제일 작은 원소의 약수들이 arrayA의 나머지 원소들의 약수가 되는가?
