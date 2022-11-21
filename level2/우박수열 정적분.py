@@ -35,6 +35,7 @@
 
 #변수선언
 # k, ranges : 입력 : 구해야하는 x의 길이와 자연수 K.
+# maxRange_x, minRange_x : int : x의 범위
 # tri_area : 배열 : x의 1증가당 삼각형의 넓이
 # squ_area : 배열 : x의 1증가당 사각형의 넓이
 # area : 배열 : index까지의 x의 1증가당 넓이를 원소로 가지는 배열
