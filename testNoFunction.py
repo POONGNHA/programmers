@@ -1,26 +1,16 @@
-k = 5
-ranges = [[0,0],[0,-1],[2,-3],[3,-3]]
+# def solution(n):
+import copy
 
-#x값의 증가에 따른 y값과, 적분 크기
-point_y = []
-area = []
-while ( k > 1 ):
-    point_y.append(k)
-    if k % 2 == 0 :
-        area.append(float(abs(k-k/2)/2 + k/2))
-        k = k / 2
-    elif k % 2 == 1 :
-        area.append(float((abs((k * 3 + 1) - k) / 2 ) + k))
-        k = k * 3 + 1
-
-#(0,0)일때 전체값, area 리스트의 크기보다 ranges[0] - ranges[1]이 더 크다면 -1, 나머지는 정상출력
+n = 12
+n_list = [i for i in range(2,n+1)]
 result = []
-for i in ranges:
-    if i == [0,0]:
-        result.append(sum(area))
-    elif len(area) + i[1] == i[0] + 1:
-        result.append(0)
-    elif len(area) + i[1] > i[0] + 1:
-        result.append(-1)
+
+while(True):
+    compare_list = copy.deepcopy(n_list) # comparelist가 복사된다. comparelist는 소수도 다 지워버림
+    if not compare_list: #compare_list가 비어있다면 중지
+        break
     else:
-        result.append(sum(area[i[0] : i[1]]))
+        result.append(min(compare_list)) #
+        for i in compare_list:
+            if i % max(result) == 0:
+                n_list.remove(i)

@@ -46,11 +46,36 @@
 # 5로 시작하는 우박수열은 5 ⇒ 16 ⇒ 8 ⇒ 4 ⇒ 2 ⇒ 1 입니다.
 # 그래프에서 꺾이는 지점을 경계로 5개의 구역으로 나눠보면 각각의 구간 넓이는 10.5, 12, 6, 3, 1.5 입니다.
 
+
+
 # 프로세싱 순서
 # ranges의 x의 구간의 시작의 최소, 구간의 끝의 최대값을 구한다.
 # 구한 최소, 최대값 사이의 넓이를 area 배열로 만든다.(tri + squ_area)
 # ranges의 배열에서 최소, 최대값의 차이만큼 배열에서 꺼내서 sum으로 더해준다.
 
+#나의 풀이
 def solution(k, ranges):
-    answer = []
-    return answer
+    # x값의 증가에 따른 y값과, 적분 크기
+    point_y = []
+    area = []
+    while (k > 1):
+        point_y.append(k)
+        if k % 2 == 0:
+            area.append(float(abs(k - k / 2) / 2 + k / 2))
+            k = k / 2
+        elif k % 2 == 1:
+            area.append(float((abs((k * 3 + 1) - k) / 2) + k))
+            k = k * 3 + 1
+
+    # (0,0)일때 전체값, area 리스트의 크기보다 ranges[0] - ranges[1]이 더 크다면 -1, 나머지는 정상출력
+    result = []
+    for i in ranges:
+        if i == [0, 0]:
+            result.append(sum(area))
+        elif len(area) + i[1] == i[0]:
+            result.append(0)
+        elif len(area) + i[1] < i[0]:
+            result.append(-1)
+        else:
+            result.append(sum(area[i[0]: i[1]]))
+    return result
