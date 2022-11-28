@@ -40,5 +40,5 @@ def solution(n):
 
     return sorted(list(set(result)))
 
-
 print(solution(34))
+
