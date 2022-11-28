@@ -13,17 +13,16 @@
 # 17	[17]
 # 420	[2, 3, 5, 7]
 
-import copy
+#내풀이
+from math import sqrt
+
+div = []
 
 def solution(n):
-    n_list = [i for i in range(2,n+1)]
-    result = []
-    while(True):
-        compare_list = copy.deepcopy(n_list) # comparelist가 복사된다. comparelist는 소수도 다 지워버림
-        if not compare_list: #compare_list가 비어있다면 중지
-            return result
-        else:
-            result.append(min(compare_list)) #
-            for i in compare_list:
-                if i % max(result) == 0:
-                    n_list.remove(i)
+    for i in range(1, int(sqrt(n))):
+        if n % i == 0:
+            div.append(i)
+            div.append(n//i)
+    return div
+
+print(solution(120))
