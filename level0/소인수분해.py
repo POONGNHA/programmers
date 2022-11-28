@@ -37,7 +37,8 @@ def solution(n):
                     n = n // min(div)
                 else:
                     div.remove(min(div))
-    return list(set(result))
+
+    return sorted(list(set(result)))
 
 
-print(solution(623))
+print(solution(34))
