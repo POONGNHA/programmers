@@ -40,4 +40,4 @@ def solution(n):
     return list(set(result))
 
 
-print(solution(62))
+print(solution(623))
