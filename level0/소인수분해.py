@@ -17,12 +17,27 @@
 from math import sqrt
 
 div = []
-
+result = []
 def solution(n):
-    for i in range(1, int(sqrt(n))):
+    for i in range(2, int(sqrt(n))+1):
         if n % i == 0:
             div.append(i)
             div.append(n//i)
-    return div
 
-print(solution(120))
+    if not div:
+        return [n]
+    else:
+        div.sort()
+        while(True):
+            if not div:
+                break
+            else:
+                if n % min(div) == 0:
+                    result.append(min(div))
+                    n = n // min(div)
+                else:
+                    div.remove(min(div))
+    return list(set(result))
+
+
+print(solution(62))
