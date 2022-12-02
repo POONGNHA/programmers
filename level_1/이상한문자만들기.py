@@ -16,18 +16,21 @@
 # "try hello world"	"TrY HeLlO WoRlD"
 
 def solution(s):
-    list_spl = s.split()
+    list_str = list(s)
     result_str = ""
-    for i in list_spl:
-        for j in range(0, len(i)):
-            if j % 2 == 0 or j == 0:
-                result_str += i[j].upper()
+    flag = True
+    for i in list_str:
+        if i == " ":
+            result_str += " "
+            flag = True
+        else:
+            if flag:
+                result_str += i.upper()
+                flag = False
             else:
-                result_str += i[j].lower()
-        result_str += " "
+                result_str += i.lower()
+                flag = True
     return result_str
 
-
-
-print(solution("try hello world"))
+print(solution("  tRy hello  WORLD    "))
 
