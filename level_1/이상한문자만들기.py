@@ -17,12 +17,17 @@
 
 def solution(s):
     list_spl = s.split()
+    result_str = ""
     for i in list_spl:
-        i.join("")
+        for j in range(0, len(i)):
+            if j % 2 == 0 or j == 0:
+                result_str += i[j].upper()
+            else:
+                result_str += i[j].lower()
+        result_str += " "
+    return result_str
 
-
-
-    return list_spl
 
 
 print(solution("try hello world"))
+
