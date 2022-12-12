@@ -28,8 +28,17 @@
 
 # 풀이 유추
 # 1,4,7과 3,6,9는 바로 L과 R출력
-# 2,5,8,0은 배열의 이전숫자가 L이면 L R이면 R을 출력한다.
-# 
+# 2,5,8,0은 가까운 손가락을 사용한다는 제한이 있다.
+# 가까운 손가락이란 조건을 만족시키려면 왼손과 오른손의 위치를 가늠해야한다.
+# 번호별로 x,y위치를 저장시킨 dict를 생성
+# position_L, position_R이라는 변수에 최근위치 저장
+# abs 함수를 사용해서 거리를 계산하고 거리가 같으면 ~잡이를 기준으로 판단
+
+# 변수선언
+# input : numbers, hand 
+# Num_dict : dict : key = 번호 : value = 좌표 list [x,y]
+# position_L, position_R : 왼손과 오른손 번호 저장
+# output : result
 
 # 테스트케이스
 # numbers	hand	result
