@@ -37,7 +37,7 @@
 # 변수선언
 # input : numbers, hand 
 # Num_dict : dict : key = 번호 : value = 좌표 list [x,y]
-# position_L, position_R : 왼손과 오른손 번호 저장
+# positionL, positionR : 왼손과 오른손 번호 저장
 # output : result
 
 # 테스트케이스
@@ -46,4 +46,39 @@
 # [7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2]	"left"	"LRLLRRLLLRR"
 # [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]	"right"	"LLRLLRLLRL"
 
-# 
+def solution(nubmers, hand):
+    #변수선언
+    #하드코딩 dict
+    NumGridDict = {0:[1,0],1:[0,3],2:[1,3],3:[2,3],4:[0,2],5:[1,2],6:[2,2],7:[0,1],8:[1,1],9:[2,1]}
+    positionL = [0,0]
+    positionR = [2,0]
+    resultStr = ""
+    
+    # 버튼을 눌렀을때
+    for i in nubmers:
+        if i % 3 == 1:
+            positionL = NumGridDict[i]
+            resultStr += "L"
+        elif i % 3 == 0 and i != 0:
+            positionR = NumGridDict[i]
+            resultStr += "R"
+        elif i % 3 == 2 or i == 0:
+            if abs(positionL[0] - NumGridDict[i][0]) + abs(positionL[1] - NumGridDict[i][1]) > abs(positionR[0] - NumGridDict[i][0]) + abs(positionR[1] - NumGridDict[i][1]):
+                positionR = NumGridDict[i]  
+                resultStr += "R"
+            elif abs(positionL[0] - NumGridDict[i][0]) + abs(positionL[1] - NumGridDict[i][1]) < abs(positionR[0] - NumGridDict[i][0]) + abs(positionR[1] - NumGridDict[i][1]):
+                positionL = NumGridDict[i]
+                resultStr += "L"
+            else:
+                if hand == "right":
+                    positionR = NumGridDict[i]  
+                    resultStr += "R"
+                else:
+                    positionL = NumGridDict[i]
+                    resultStr += "L"
+    return resultStr
+
+print(solution([1, 2, 3, 4, 5, 6, 7, 8, 9, 0],"right"))                    
+                
+# 개선점
+# 문제의 *과 #도 처음의 dict에 다 넣어버리면 더 좋았을것같다.                
