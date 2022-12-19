@@ -42,14 +42,19 @@
 
 # 풀이
 def solution(k,m,score):
+    # 박스를 1개도 못만들때
+    if len(score) < m:
+        return 0
+    
     tempList = []
     result = 0
-    # 남은 사과 버리기
+    # 사과 정렬
     score.sort(reverse = True)
+    # 남은 사과 버리기
     while len(score)% m != 0:
         del score[len(score)-1]
     for i in range(0,(len(score)//m)):
-        tempList.append(score[3*i:3*(i+1)])
+        tempList.append(score[m*i:m*(i+1)])
     for j in tempList:
         result += min(j) * m
     return result
