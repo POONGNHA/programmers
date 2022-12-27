@@ -47,18 +47,36 @@
 
 # solution
 def solution(n, arr1, arr2):
-    binaryArr1 = list()
-    binaryArr2 = list()
+    binaryArr = list()
+    resultList = list()
     rest = 0
     
-    for i in range(0,len(arr1)):
-        rest = arr1[i]
+    for i in range(0,n):
+        rest1 = arr1[i]
+        rest2 = arr2[i]
         tempStr = ""
-        for j in range(n,-1,-1):
-            tempStr += map(str, rest // (2**j))
-            if rest // (2**j) == 1:
-                rest = rest % (2**j)
-        binaryArr1.append(tempStr)
-    return binaryArr1
+        
+        for j in range(n-1,-1,-1):
+            if (rest1 // (2**j))==1 or rest2 // (2**j) == 1:
+                tempStr += "1"
+            else:
+                tempStr += "0"
+            if rest1 // (2**j) == 1:
+                rest1 = rest1 % (2**j)
+            if rest2 // (2**j) == 1:
+                rest2 = rest2 % (2**j)
+        binaryArr.append(tempStr)
+        
+    for i in binaryArr:
+        tempStr = ""
+        for j in list(i):
+            if j == "1":
+                tempStr += "#"
+            else:
+                tempStr += " "
+        resultList.append(tempStr)
+    return resultList 
+    
+print(solution(5,[9, 20, 28, 18, 11],[30, 1, 21, 17, 28]))
     
     
