@@ -77,6 +77,31 @@ def solution(n, arr1, arr2):
         resultList.append(tempStr)
     return resultList 
     
-print(solution(5,[9, 20, 28, 18, 11],[30, 1, 21, 17, 28]))
+# print(solution(5,[9, 20, 28, 18, 11],[30, 1, 21, 17, 28]))
     
+# 보완점
+# zip() 사용
+# zip을 사용하면 2개의 리스트를 하나의 리스트로 묶어서 볼수 있다.
+# 각 n번째 원소 2개를 n번째 원소로 가지는 list를 만들어준다.
+
+# bin() 사용
+# bin()은 integer를 String으로 return해준다
+# python에서 2진수를 표현할때 0b라고 표현하기때문에 [2:]로 표현해야한다
+
+# rjust() 사용
+# 우측정렬함
+
+
+# zip()과 bin()을 사용해서 풀은 2번째 solution
+def solution2(n, arr1, arr2):
+    answer = []
     
+    for i,j in zip(arr1,arr2):
+        a12 = bin(i|j)[2:]
+        a12=a12.rjust(n,'0')
+        a12=a12.replace('1','#')
+        a12=a12.replace('0',' ')
+        answer.append(a12)
+    return answer
+
+print(solution2(5,[9, 20, 28, 18, 11],[30, 1, 21, 17, 28]))
