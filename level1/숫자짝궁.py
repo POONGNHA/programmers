@@ -43,12 +43,11 @@ def solution(X,Y):
     Y_list = list(Y)
     result_list = []
     
-    for i in X_list:
-        for j in range(0,len(Y_list)):
-            if i == Y_list[j]:
-                result_list.append(i)
-                Y_list.pop(j)
-                break
+    for i in range(0,10):
+        if X_list.count(str(i)) != 0 and Y_list.count(str(i)) != 0:
+            for j in range(0, min([X_list.count(str(i)),Y_list.count(str(i))])):
+                result_list.append(str(i))
+            
     if not result_list:
         return "-1"
     if sum(map(int,result_list)) == 0:
