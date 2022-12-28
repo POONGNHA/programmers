@@ -77,7 +77,7 @@ def solution(n, arr1, arr2):
         resultList.append(tempStr)
     return resultList 
     
-# print(solution(5,[9, 20, 28, 18, 11],[30, 1, 21, 17, 28]))
+print(solution(5,[9, 20, 28, 18, 11],[30, 1, 21, 17, 28]))
     
 # 보완점
 # zip() 사용

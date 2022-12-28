@@ -36,8 +36,4 @@ import copy
 
 
 def solution(A,B):
-    tempA = copy.deepcopy(A)
-    tempB = copy.deepcopy(B)
     
-    for i in range(0,len(A)):
-        
