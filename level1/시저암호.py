@@ -13,11 +13,36 @@
 # n은 1 이상, 25이하인 자연수입니다.
 
 # 풀이 유추
-# ascii 97~122번까지가 알파벳의 모음 chr() 함수 사용
-# 
+# ascii 97~122번까지가 알파벳의 모음 chr(), ord() 함수 사용
+# 대소문자 구분 처리 -> ord()로 index를 뽑고, n만큼 더해준다. 
+# 65~91번까지가 대문자, 97~122번까지가 소문자 알파벳으로 이루어져있다.
+# 상식 : 알파벳은 26글자로 이루어져있다.
+
+
+# 변수 선언
+# input : s, n : String, int
+# sList : list
+# output : result : String
+
 
 # 입출력 예
 # s	n	result
 # "AB"	1	"BC"
 # "z"	1	"a"
 # "a B z"	4	"e F d"
+
+# 풀이
+def solution(s,n):
+    sList = list(s)
+    result = ""
+    for i in sList:
+        if ord(i) == 32 :
+            result += " "
+        elif ord(i) < 92 :
+            result += chr( 65 + ((ord(i)+n)%65)%26 )
+        elif ord(i) > 96 :
+            result += chr( 97 + ((ord(i)+n)%97)%26 )
+    return result
+    
+    
+print(solution("AB"	,1))
