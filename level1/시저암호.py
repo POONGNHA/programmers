@@ -46,3 +46,5 @@ def solution(s,n):
     
     
 print(solution("AB"	,1))
+
+# isupper(), islower로 대소문자를 구별할 수 있다.
