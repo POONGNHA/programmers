@@ -49,22 +49,29 @@
 # 6	1T2D3D#	-4	13 + 22 + 32 * (-1)
 # 7	1D2S3T*	59	12 + 21 * 2 + 33 * 2
 
+import re
+
+
 def solution(dartResult):
-    ScoreList = []
-    for i in list(dartResult):
-        if i.isdigit() :
-            ScoreList.append(int(i))
-        else :
-            if i == "D":
-                ScoreList[len(ScoreList)-1] = ScoreList[len(ScoreList)-1] ** 2
-            elif i == "T":
-                ScoreList[len(ScoreList)-1] = ScoreList[len(ScoreList)-1] ** 3
-            elif i == "*":
-                for j in range(len(ScoreList)):
-                    ScoreList[j] = ScoreList[j] * 2
-            elif i == "#":
-                ScoreList[len(ScoreList)-1:] * (-2)
+    ScoreList = re.split("[^0-9]", dartResult)
+    ManipulateList = re.split("[0-9]", dartResult)
+    
+    # for i in :
+    #     if i.isdigit() :
+    #         ScoreList.append(int(i))
+    #     else :
+    #         if i == "D":
+    #             ScoreList[len(ScoreList)-1] = ScoreList[len(ScoreList)-1] ** 2
+    #         elif i == "T":
+    #             ScoreList[len(ScoreList)-1] = ScoreList[len(ScoreList)-1] ** 3
+    #         # 막힌부분
+    #         elif i == "*":
+    #             ScoreList[-1] =  ScoreList[-1] * 2
+    #             if len(ScoreList) > 1:
+    #                 ScoreList[-2] =  ScoreList[-2] * 2
+    #         elif i == "#":
+    #             ScoreList[-1] =  ScoreList[-1] * (-1)
+                
     return sum(ScoreList)
 
-print(solution("1S2D*3T"))
-
+print(solution("1D2S#10S"))
