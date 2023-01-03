@@ -53,25 +53,22 @@ import re
 
 
 def solution(dartResult):
-    ScoreList = re.split("[^0-9]", dartResult)
-    ManipulateList = re.split("[0-9]", dartResult)
+    # 문자열 가공. 숫자를 기준으로 split하여 숫자 리스트와 문자 리스트를 만든다
+    ScoreList = [int(i) for i in re.split("[^0-9]", dartResult) if i]
+    ManipulateList = [i for i in re.split("[0-9]", dartResult) if i]
     
-    # for i in :
-    #     if i.isdigit() :
-    #         ScoreList.append(int(i))
-    #     else :
-    #         if i == "D":
-    #             ScoreList[len(ScoreList)-1] = ScoreList[len(ScoreList)-1] ** 2
-    #         elif i == "T":
-    #             ScoreList[len(ScoreList)-1] = ScoreList[len(ScoreList)-1] ** 3
-    #         # 막힌부분
-    #         elif i == "*":
-    #             ScoreList[-1] =  ScoreList[-1] * 2
-    #             if len(ScoreList) > 1:
-    #                 ScoreList[-2] =  ScoreList[-2] * 2
-    #         elif i == "#":
-    #             ScoreList[-1] =  ScoreList[-1] * (-1)
-                
+    for i in range(0,3): 
+        for j in list(ManipulateList[i]):
+            if j == "D":
+                ScoreList[i] = ScoreList[i] ** 2
+            elif j == "T":
+                ScoreList[i] = ScoreList[i] ** 3
+            elif j == "*":
+                ScoreList[i] = ScoreList[i] * 2
+                if i > 0:
+                    ScoreList[i-1] = ScoreList[i-1] * 2
+            elif j == "#":
+                ScoreList[i] = ScoreList[i] * (-1)
     return sum(ScoreList)
 
 print(solution("1D2S#10S"))
