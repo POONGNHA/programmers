@@ -72,3 +72,10 @@ def solution(dartResult):
     return sum(ScoreList)
 
 print(solution("1D2S#10S"))
+
+# 막혔던 부분
+# 0-9가 아닌 0~10까지의 범위를 가진 수가 들어있는 String을 쪼개는 방법 -> 정규 표현식 사용. re api 사용
+# list 내의 ''와 같은 빈 원소 없애기 -> if args로 해결
+
+# 추가 개선 사항
+# 한번추출이 끝난, 즉 조작문자열만 남은 것을 replace()함수를 사용해서 숫자를 곱하기만 하여 끝냈으면 더 간단했을것 같다.
