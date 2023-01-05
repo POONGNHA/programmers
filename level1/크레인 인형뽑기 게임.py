@@ -52,13 +52,19 @@ def solution(board, moves):
     result = 0
     for i in range(0,len(board)):
         board[i] = list(''.join(map(str,board[i])).replace("0",""))
+    
     for i in range(0,len(moves)):
         if board[moves[i]-1]:
             resultList.append(board[moves[i]-1][-1])
             board[moves[i]-1].pop()
-            if len(resultList) > 1 and resultList[-1] == resultList[-2] :
-                resultList = resultList[:-3]
-                result += 2
+            
+    while(resultList):
+        if resultList[-1] == resultList[-2]:
+            resultList.pop()
+            resultList.pop()
+            result += 2
+        else:
+            resultList.pop()
     return result
 
 print(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]],[1,5,3,5,1,2,1,4]))
@@ -66,3 +72,6 @@ print(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]],[1,
 # 막힌부분
 # ''.join이 동작이 안됨 -> 숫자로 이루어진 리스트라서
 # 문제에서 준 board가 숫자로 이루어진 리스트니까 map()을 사용해서 String으로 먼저 바꿔준후에 데이터를 다뤄야한다.
+
+# moves[i]-1같이 인덱스는 -1을 해주어야 맞는다
+
