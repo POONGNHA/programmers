@@ -58,13 +58,13 @@ def solution(board, moves):
             resultList.append(board[moves[i]-1][-1])
             board[moves[i]-1].pop()
             
-    while(resultList):
-        if resultList[-1] == resultList[-2]:
-            resultList.pop()
-            resultList.pop()
-            result += 2
-        else:
-            resultList.pop()
+    # while(resultList):
+    #     if resultList[-1] == resultList[-2]:
+    #         resultList.pop()
+    #         resultList.pop()
+    #         result += 2
+    #     else:
+    #         resultList.pop()
     return result
 
 print(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]],[1,5,3,5,1,2,1,4]))
@@ -75,3 +75,6 @@ print(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]],[1,
 
 # moves[i]-1같이 인덱스는 -1을 해주어야 맞는다
 
+# !테스트케이스 실패!
+# 시간초과를 해결하기 위해 -> 3N의 시간이 걸리면 시간초과로 처리
+# 하나의 배열을 처리하는 식으로 사용해야할것같다.
