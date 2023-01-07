@@ -46,6 +46,5 @@ def solution(s):
 
 print(solution("banana"))
 
-# 
+# 보충
 # 문자열을 뒤집기 위해서 -> reversed( String ) 사용
-# 
