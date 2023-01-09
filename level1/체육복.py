@@ -40,16 +40,20 @@
 
 # 풀이
 def solution(n, lost, reserve):
-    for i in range(0,len(lost)):
-        # 1개만 빌릴수 있는 학생 먼저 처리
-        if reserve.count(lost[i]-1) + reserve.count(lost[i]+1) == 1 :
-            lost[i] = 0
-    for i in range(0,len(lost)):
-        # 2개 빌릴수 있는 학생 처리
-        if lost[i] != 0 and reserve.count(lost[i]-1) + reserve.count(lost[i]+1) == 2 :
-            lost[i] = 0
-        else :
-            lost[i] = 1
-    return n - sum(lost)
+    reserve_twice = []
+    for i in reserve:
+        if (i+1) in lost and (i-1) in lost:
+            reserve_twice.append(i)
+        elif (i+1) in lost:
+            lost.remove(i+1)
+        elif (i-1) in lost:
+            lost.remove(i-1)
+    for j in reserve_twice:
+        if (i+1) in lost:
+            lost.remove(i+1)
+        elif (i-1) in lost:
+            lost.remove(i-1)
+    return n - len(lost)
 
-print(solution(5,[2, 4],[3]))
+
+# 개선점
