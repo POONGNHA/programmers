@@ -14,6 +14,8 @@
 
 # 변수선언
 # input : n :: int 
+# cnt : int
+# temp_str : str
 # output : result : int
 
 # 입출력 예
@@ -21,3 +23,15 @@
 # 45	7
 # 125	229
 
+# 풀이
+def solution(n):
+    cnt = 0
+    temp_str = ""
+    while(n < (3**cnt)):
+        cnt += 1
+    for i in range(cnt,0,-1):
+        n = 
+        
+        temp_str += str(n % (3 ** i))
+        
+        
