@@ -41,13 +41,21 @@
 #풀이
 def solution(N,stages):
     stages.sort()
-    FPL = []
+    FPL = {}
     for i in range(1,N+1):
         if stages.count(i) == 0:
-            FPL.append(0)
+            FPL[i] = 0
         else:
-            FPL.append(stages.count(i)/len(stages))
+            FPL[i] =(stages.count(i)/len(stages))
             stages = stages[stages.count(i):]
-        
+    FPL = sorted(FPL.items(), key = lambda item: item[1], reverse = True)
+    return [i[0] for i in FPL]
+
 
 print(solution(5,[2, 1, 2, 6, 2, 4, 3, 3]))
+
+# 몰랐던 부분
+# dict를 value로 정렬하는 것
+# FPL = sorted(FPL.items(), key = lambda item: item[1], reverse = True)
+# dict를 key로 정렬하는 것
+# FPL = sorted(FPL.items(), key = lambda item: item[0], reverse = True)
