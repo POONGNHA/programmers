@@ -57,5 +57,7 @@ print(solution(5,[2, 1, 2, 6, 2, 4, 3, 3]))
 # 몰랐던 부분
 # dict를 value로 정렬하는 것
 # FPL = sorted(FPL.items(), key = lambda item: item[1], reverse = True)
+# FPL = sorted(FPL.items(), lambda item: item[1])
+
 # dict를 key로 정렬하는 것
 # FPL = sorted(FPL.items(), key = lambda item: item[0], reverse = True)
