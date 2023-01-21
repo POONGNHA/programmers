@@ -67,10 +67,29 @@
 # output : list
 
 # 입출력 예
-# today	terms	privacies	result
-# "2022.05.19"	["A 6", "B 12", "C 3"]	["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]	[1, 3]
+# today	        terms	                privacies	                                                                result
+# "2022.05.19"	["A 6", "B 12", "C 3"]	["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]	        [1, 3]
 # "2020.01.01"	["Z 3", "D 5"]	["2019.01.01 D", "2019.11.15 Z", "2019.08.02 D", "2019.07.01 D", "2018.12.28 Z"]	[1, 4, 5]
 
 # 풀이
 def solution(today,terms,privacies):
+    todayList = today.split(".")
+    termsDict = {}
+    privaciesList = []
+    
+    for i in terms:
+        termsDict[i[0]] = i[-1]
+    
+    for j in privacies:
+        privaciesList.append(list(j[-1])+list(j[:-2].split(".")))
+        
+    
+    
+    
+    
+    
+        
+print(solution("2022.05.19",["A 6", "B 12", "C 3"],["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]))
+    
+    
     
