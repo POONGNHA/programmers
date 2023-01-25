@@ -83,6 +83,7 @@ def solution(today,terms,privacies):
     for j in privacies:
         privaciesList.append(list(j[-1])+list(j[:-2].split(".")))
         
+        
     
     
     
