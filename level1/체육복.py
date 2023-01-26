@@ -45,5 +45,7 @@ def solution(n, lost, reserve):
             lost.remove(i+1)
         elif (i-1) in lost:
             lost.remove(i-1)
+            
 
 # 개선점
+# 그리드 알고리즘을 이용해서 더 최선해를 찾는 방법을 연구해야할것이다
