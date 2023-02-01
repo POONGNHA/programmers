@@ -77,11 +77,15 @@ from itertools import count
 
 
 def solution(id_list,report,k):
-    report = set(report)
     reportDict = {}
-    result = [0]*len(id_list)
-    for reporter_reported in report:
-        result[id_list.index(reporter_reported.split(" ")[0])] += 1
-    return result
+    reported_list = []
+    for reporter_reported in set(report):
+        reported_list.append(reporter_reported.split(" ")[1])
+        reportDict[reporter_reported.split(" ")[0]] = reporter_reported.split(" ")[1]
+    #
+    for reportedName in reported_list:
+        if reported_list.count(reportedName) > k -1:
+            
+    return 
     
 print(solution(["muzi", "frodo", "apeach", "neo"],["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"],2))
