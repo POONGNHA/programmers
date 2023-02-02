@@ -82,10 +82,10 @@ def solution(id_list,report,k):
     for reporter_reported in set(report):
         reported_list.append(reporter_reported.split(" ")[1])
         reportDict[reporter_reported.split(" ")[0]] = reporter_reported.split(" ")[1]
-    #
+    #dictionary로 해결하는 편이 좋을까?
     for reportedName in reported_list:
         if reported_list.count(reportedName) > k -1:
             
-    return 
+    return 0
     
 print(solution(["muzi", "frodo", "apeach", "neo"],["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"],2))
