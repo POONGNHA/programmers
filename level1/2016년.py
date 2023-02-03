@@ -26,10 +26,13 @@
 # 풀이
 def solution(a,b):
     result = 0
-    DayOfTheWeek_dict = {3:"SUN",4:"MON",5:"TUE",6:"WED",7:"THU",1:"FRI",2:"SAT"}
+    DayOfTheWeek_dict = {3:"SUN",4:"MON",5:"TUE",6:"WED",0:"THU",1:"FRI",2:"SAT"}
     remainDay_dict = {1:31,2:29,3:31,4:30,5:31,6:30,7:31,8:31,9:30,10:31,11:30,12:31}
     for month in range(1,a): 
         result += remainDay_dict[month]
     return DayOfTheWeek_dict[(result + b) % 7]
 
 print(solution(5,24))
+
+# 개선점
+# 7로 나눈다면 나머지가 0으로 처리를 해줘야함
