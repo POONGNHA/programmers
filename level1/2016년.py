@@ -13,7 +13,23 @@
 # key는 달, value는 일수를 적음
 # a월 b일까지의 일수를 계산하고 남은 날짜에 7로 나누어 나머지를 리턴함.
 
+# 변수 선언
+# input : a b :: int
+# remainDay_dict : dict 
+# DayOfTheWeek_dict : dict
+# output : result :: String
+
 # 입출력 예
 # a	b	result
 # 5	24	"TUE"
 
+# 풀이
+def solution(a,b):
+    result = 0
+    DayOfTheWeek_dict = {3:"SUN",4:"MON",5:"TUE",6:"WED",7:"THU",1:"FRI",2:"SAT"}
+    remainDay_dict = {1:31,2:29,3:31,4:30,5:31,6:30,7:31,8:31,9:30,10:31,11:30,12:31}
+    for month in range(1,a): 
+        result += remainDay_dict[month]
+    return DayOfTheWeek_dict[(result + b) % 7]
+
+print(solution(5,24))
