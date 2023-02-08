@@ -69,6 +69,10 @@
 # 6	동의
 # 7	매우 동의
 # 입출력 예
+
+# 풀이 유추
+# 
+
 # survey	choices	result
 # ["AN", "CF", "MJ", "RT", "NA"]	[5, 3, 2, 7, 5]	"TCMA"
 # ["TR", "RT", "TR"]	[7, 1, 3]	"RCJA"
