@@ -21,13 +21,16 @@
 # cnt : int
 # output : result :: int
 
-
 # 제한사항
 # 1 ≤ s의 길이 ≤ 10,000
 # s는 영어 소문자로만 이루어져 있습니다.
 # 입출력 예
 # s	result
-# "banana"	3
-# "abracadabra"	6
-# "aaabbaccccabba"	3
+# "ba na na"	3
+# "ab ra ca da br a"	6
+# "aaabbacc ccab ba"	3
+
+# 풀이
+def solution(s):
+    
 
