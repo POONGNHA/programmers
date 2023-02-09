@@ -32,5 +32,13 @@
 
 # 풀이
 def solution(s):
-    
-
+    result = 0
+    while(s):
+        
+        for idx in range(2,len(s),2):
+            if s[:idx].count(s[0]) == (len(s[:idx]) - s.count(s[0])):
+                result += 1
+                s = s[idx:]
+                break
+    return result
+print(solution("banana"))
