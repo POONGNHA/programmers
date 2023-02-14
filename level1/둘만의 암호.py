@@ -45,19 +45,23 @@ def solution(s,skip,index):
     # ascii 원소로 이루어진 list 생성
     s_list = [ord(s_element) for s_element in list(s)]
     skip_list = [ord(skip_element) for skip_element in list(skip)]
-    result_list = []
+    result = ""
     
+    # index에 skip요소를 더했는데 그 값이 skip에 또 포함되었을때 처리
     for s_element in s_list:
-        plus_value = 0
-        for skip_element in range(s_element, s_element + index):
-            if skip_element in skip_list:
-                plus_value += 1
-        
-        # index에 skip요소를 더했는데 그 값이 skip에 또 포함되었을때 처리
-        
-        result_list.append((((s_element + index + plus_value)-96)%26)+96)
-    
-    return "".join([chr(i) for i in result_list])
+        plus_value = index
+        result_element = s_element
+        while(plus_value != 0):
+            # ascii에서 알파벳 범위를 넘어갔을때 처리
+            result_element = ((result_element-96)%26)+96
+            if result_element in skip_list:
+                result_element += 1
+            else:
+                result_element += 1
+                plus_value -= 1
+        result += chr(result_element)
+    return result
+
 print(solution("aukks","wbqd",5))
 
 # 개선점
@@ -69,3 +73,6 @@ print(solution("aukks","wbqd",5))
 #               if skip_element in skip_list:
 #                   plus_value += 1
 # 라고 생각했는데 while문을 사용해서 하는것이 더 맞는 풀이라고 생각된다.
+
+# 최종값이 skip의 원소일때를 생각했어야 문제가 풀린다.
+# 테스트케이스 2,9번 성공
