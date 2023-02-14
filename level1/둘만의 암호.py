@@ -50,19 +50,22 @@ def solution(s,skip,index):
     # index에 skip요소를 더했는데 그 값이 skip에 또 포함되었을때 처리
     for s_element in s_list:
         plus_value = index
-        result_element = s_element
         while(plus_value != 0):
             # ascii에서 알파벳 범위를 넘어갔을때 처리
-            result_element = ((result_element-96)%26)+96
-            if result_element in skip_list:
-                result_element += 1
+            # 97일때, 122일때, 123일때
+            if s_element in skip_list:
+                s_element += 1
             else:
-                result_element += 1
+                s_element += 1
                 plus_value -= 1
-        result += chr(result_element)
+            s_element = ((s_element-96)%27 + (s_element-96)//27 )+96
+        result += chr(s_element)
     return result
 
 print(solution("aukks","wbqd",5))
+
+
+
 
 # 개선점
 # %25가 아니라 %26을 해야 a로 넘어갔을때를 상정할 수 있다.
