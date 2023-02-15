@@ -56,7 +56,7 @@
 # new_id에 나타날 수 있는 특수문자는 -_.~!@#$%^&*()=+[{]}:?,<>/ 로 한정됩니다.
 
 # 풀이유추
-# 1단계 : lowercase()사용
+# 1단계 : lower()사용
 # 2단계 : isalnum() or "-" or "_" or "." 인지 판별
 # 3단계 : ".."이 없을때까지 "."으로 변환
 # 4단계 : [1], [-1]에 위치하는 원소가 .이면 지우기
@@ -76,9 +76,47 @@
 # 예4	"123_.def"	"123_.def"
 # 예5	"abcdefghijklmn.p"	"abcdefghijklmn"
 
-# 풀이1
+# 풀이
+def solution(new_id):
+    #1
+    new_id = new_id.lower()
+    #2
+    new_id_list = list(new_id)
+    for idx in range(0,len(new_id_list)):
+        if new_id_list[idx].isalnum() or new_id_list[idx] == "-" or new_id_list[idx] == "_" or new_id_list[idx] == ".":
+            pass
+        else:
+            new_id_list[idx] = ""
+    new_id = "".join(new_id_list)
+    #3
+    while('..' in new_id):
+        new_id = new_id.replace('..','.')
+    #4
+    new_id = new_id.lstrip('.')
+    new_id = new_id.rstrip('.')
+    #5
+    if not new_id:
+        new_id = "a"
+    #6
+    if len(new_id) > 15:
+        new_id = new_id[:15]
+        new_id = new_id.lstrip('.')
+        new_id = new_id.rstrip('.')
+    #7
+    if len(new_id) < 3:
+        while(len(new_id) < 3):
+            new_id = new_id + new_id[-1]
+    return new_id
 
+print(solution("abcdefghijklmn.p"))
 
 # 새로 배운사항
 # isalpha() 알파벳 판별
 # isalnum() 알파벳, 숫자 판별
+
+
+# while(new_id in "..") => 이거 동작안함
+# while('..' in new_id): 이게 동작함
+
+# new_id.replace('..','.') => 이렇게 하면 new_id에 저장이 안됨. 그냥 결과만 return
+# new_id = new_id.replace('..','.') 
