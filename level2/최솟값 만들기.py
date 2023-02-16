@@ -15,16 +15,13 @@
 # 배열 A, B의 원소의 크기 : 1,000 이하의 자연수
 
 # 풀이유추
-# 최소값을 구하려면 A의 첫번째 원소가 B의 1,2,3,4...n 번째 원소까지 곱해지는 만큼
-# 즉 A,B가 서로 길이가 같다는 조건이 있으므로 len(A)! 만큼의 리스트를 만든다.
-# 그 리스트중 합이 최소인 녀석의 sum을 리턴
-# 빼는 것을 생각했는데, 이미 쓴 원소를 0으로 바꿔주는것이 효율적 이라 생각이 든다.
+# iter를 import해서 permutations 사용
+# 하나씩 곱해서 최소값을 return한다.
 
 # Param
-# A, B : input : list
-# TimeParam_list : list
-# TotalSum_list : list 
-# return : int :
+# input : A, B ::  list
+# permutation_list : list
+# output : result :: int
 
 # 입출력 예
 # A	B	answer
@@ -32,8 +29,18 @@
 # [1,2]	[3,4]	10
 
 # 풀이
-import copy
+
 
 
 def solution(A,B):
-    
+    result = []
+    A.sort()
+    B.sort(reverse = True)
+    for i in range(0,len(A)):
+        result.append(A[i]*B[i])
+    return sum(result)
+
+
+# 새로 배운점
+# 2개의 배열에서 random을 고를때는 product()함수를 사용한다.
+# zip을 사용해서 풀면 더 쉽게 풀수 있는 문제였다.
