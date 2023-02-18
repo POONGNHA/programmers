@@ -13,6 +13,8 @@
 # find() 함수를 사용하면 되지 않을까
 # 기본적으로 ()를 찾으면 없애서 최종적으로 ""가 되어야 true를 반환할수 있다.
 
+
+
 # 변수선언
 # input : s :: String
 # output : answer :: String
@@ -26,17 +28,21 @@
 
 # 풀이
 def solution(s):
-    while("()" in s):
-        s = s.replace("()","")
-    if s:
-        return False
-    else:
-        return True
+    stack = []
+    
+    for i in s:
+        if i == '(':
+            stack.append(i)
+        elif not stack or stack.pop() != '(':
+            return False
+    return False if stack else True
+    
     
 
-print(solution("(())()"))
+print(solution("(()("))
 
-# 개선점
+# !개선점!
+
 # def solution(s):
 #     while("()" in s):
 #         s = s.replace("()","")
@@ -46,3 +52,19 @@ print(solution("(())()"))
 #         return True
 # 효율성테스트에서 실패로 나왔다.
 # 더 효율적으로 구하는 방법이 있을까?
+#
+# 1. ")"로 시작하거나 "("로 끝난다면 무조건 false를 return한다.
+# 2. "("의 갯수와 ")"의 갯수가 다르다면 무조건 false를 return한다. => 효율성 2번 통과
+# def solution(s):
+#     if s.count("(") != s.count(")"):
+#         return False
+#     while("()" in s):
+#         if s[0] == ")" or s[-1] == "(":
+#             return False   
+#         s = s.replace("()","")
+        
+#     if s:
+#         return False
+#     else:
+#         return True
+# 3. stack을 사용해보면 달라질것같다.
