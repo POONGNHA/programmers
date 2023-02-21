@@ -25,20 +25,21 @@
 # 15	4
 
 # 풀이
-from math import ceil
-
-
 def solution(n):
     result = 0
-    for num in range(1,ceil(n//2)):
-        sum_num = 0
-        for factorial_num in range(1,num+1):
-            if sum_num == n:
+    for num in range(1,int(n//2)+1):
+        temp_sum = 0
+        for reverse_factorial in range(num,n):
+            temp_sum += reverse_factorial
+            if temp_sum == n:
                 result += 1
-            if sum_num > n:
                 break
-            else:
-                sum_num += factorial_num
-    return result
-
+            elif temp_sum > n:
+                break
+    return result + 1
+            
 print(solution(15))
+
+# 깨달은 점
+# DP, 동적프로그래밍에 대해서 공부할 수 있는 문제.
+# 순간의 최적해라는 개념에 대해 고찰해 볼 수 있었다
