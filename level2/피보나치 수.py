@@ -28,13 +28,20 @@
 def solution(n):
     if n == 0:
         return 0
-    elif n == 1:
+    if n == 1:
         return 1
-    else:
-        return solution(n-1) + solution(n-2)
+    return (solution(n-1)%1234567 + solution(n-2)%1234567)%1234567
 
-print(solution(3))
+print(solution(5))
 
 
 # 개선점
 # 테스트 케이스 6번까지는 통과
+# def solution(n):
+#     if n == 0:
+#         return 0
+#     if n == 1:
+#         return 1
+#     return solution(n-1) + solution(n-2)
+#
+# 시간을 줄이기 위해서는 값을 저장시켜두는게 빠르지 않을까?
