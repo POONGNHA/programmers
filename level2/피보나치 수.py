@@ -26,11 +26,10 @@
 
 # 풀이
 def solution(n):
-    if n == 0:
-        return 0
-    if n == 1:
-        return 1
-    return (solution(n-1)%1234567 + solution(n-2)%1234567)%1234567
+    n_list = [0,1]
+    for i in range(len(n_list),n+1):
+        n_list.append((n_list[i-1] + n_list[i-2])%1234567)
+    return n_list[-1]
 
 print(solution(5))
 
@@ -45,3 +44,5 @@ print(solution(5))
 #     return solution(n-1) + solution(n-2)
 #
 # 시간을 줄이기 위해서는 값을 저장시켜두는게 빠르지 않을까?
+# 결과적으로 맞았다. 재귀함수를 하면 시간이 너무 많이 걸리고, 
+# list의 형식으로 저장해서 계산하는 방법이 최적해를 도출해낸다.
