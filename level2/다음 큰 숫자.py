@@ -23,4 +23,11 @@
 # 78	83
 # 15	23
 
-# 
+# 풀이
+def solution(n):
+    cnt = 1
+    while(bin(n)[2:].count("1") != bin(n+cnt)[2:].count("1")):
+        cnt += 1
+    return n+cnt
+
+print(solution(78))
