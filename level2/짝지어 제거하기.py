@@ -24,7 +24,7 @@
 
 # 변수선언
 # input : s :: String
-# idx : int
+# stack : list
 # output : result :: int
 
 # 입출력 예
@@ -39,20 +39,17 @@ def solution(s):
         if s.count(element) % 2 != 0:
             return 0
     
-    # 원소 체크
-    idx = 0
-    while(not(idx == 0 and idx == len(s) or idx == len(s)-1)):
-        s = list(s)
-        if s[idx] == s[idx+1]:
-            s.pop(idx)
-            s.pop(idx)
-            if idx != 0:
-                idx -= 1
-        else:
-            idx += 1
-    "".join(s)
+    # Stack을 이용해서 풀이
+    stack = list()
+    for s_element in s:
+        stack.append(s_element)
+        if len(stack) > 1:
+            if stack[-1] == stack[-2]:
+                stack.pop()
+                stack.pop()
+    
     # s가 텅 비어있다면
-    if s:
+    if stack:
         return 0
     else:
         return 1
@@ -63,3 +60,28 @@ print(solution("baabaa"))
 # 테스트케이스 3,4,5번 통과 실패
 # 시간 테스트 2,3,4,5번 통과 실패
 # 알고리즘 개선이 필요하다.
+
+# 1번째 풀이 ----------------------------
+# for element in set(list(s)):
+#     if s.count(element) % 2 != 0:
+#         return 0
+
+# # 원소 체크
+# idx = 0
+# while(not(idx == 0 and idx == len(s) or idx == len(s)-1)):
+#     s = list(s)
+#     if s[idx] == s[idx+1]:
+#         s.pop(idx)
+#         s.pop(idx)
+#         if idx != 0:
+#             idx -= 1
+#     else:
+#         idx += 1
+# "".join(s)
+# # s가 텅 비어있다면
+# if s:
+#     return 0
+# else:
+#     return 1
+
+# Stack을 이용해서 간단하게 풀었다.
