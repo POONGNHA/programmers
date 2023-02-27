@@ -32,13 +32,22 @@
 
 # 풀이
 def solution(s):
+    s_list = list(s)
     result = 0
-    while(s):
-        
-        for idx in range(2,len(s),2):
-            if s[:idx].count(s[0]) == (len(s[:idx]) - s.count(s[0])):
-                result += 1
-                s = s[idx:]
-                break
+    stack = []
+
+    for s_element in s_list:
+        stack.append(s_element)
+        if stack.count(stack[0]) == (len(stack) - stack.count(stack[0])):
+            stack = []
+            result += 1
+    if stack:
+        return result + 1
     return result
-print(solution("banana"))
+    
+print(solution("abracadabra"))
+    
+
+
+# 23'02'27 다시 한번 풀이
+# 예전에 풀지 못했던 문제 풀이.
