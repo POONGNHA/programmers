@@ -1,11 +1,17 @@
 ## programmers 문제풀이!
 
-2022년 10월 10일 0레벨 시작
-문제파악 / 유추파악 / 주요단어 영문이름 선정 / 테스트케이스 / 프로그래밍 순서 / try-on / 실패시 원인 기록
+# 2022년 10월 10일 python 0레벨 시작
+# 2022년 11월 28일 python 1레벨 시작
+# 2023년 2월 20일 python 2레벨 시작
+# 2023년 2월 28일 SQL 1레벨 시작
+
+
+코딩테스트 :: 문제파악 / 유추파악 / 주요단어 영문이름 선정 / 테스트케이스 / 프로그래밍 순서 / try-on / 실패시 원인 기록
+
 
 
 |분류/언어| 문제                                                                             | 내 코드                                                                                                 |비고|
-|---|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|---
+|-----|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|---
 | SQL | [ 조건에 맞는 도서 리스트 출력하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/144853)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level1/%EC%A1%B0%EA%B1%B4%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EB%8F%84%EC%84%9C%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.SQL)| SUBSTRING
 | SQL | [ 어린 동물 찾기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59037)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level1/%EC%96%B4%EB%A6%B0%20%EB%8F%99%EB%AC%BC%20%EC%B0%BE%EA%B8%B0.SQL)| WHERE 
 | SQL | [ 여러 기준으로 정렬하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59404)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level1/%EC%97%AC%EB%9F%AC%20%EA%B8%B0%EC%A4%80%EC%9C%BC%EB%A1%9C%20%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0.SQL)| DESC
