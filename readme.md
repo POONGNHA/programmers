@@ -12,7 +12,8 @@
 
 |분류/언어| 문제                                                                             | 내 코드                                                                                                 |비고|
 |-----|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|---
-| SQL lv2 | [ 조건에 맞는 도서 리스트 출력하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59408)  |[코드]()| DISTINCT
+| SQL lv2 | [ DATETIME에서 DATE로 형 변환 ](https://school.programmers.co.kr/learn/courses/30/lessons/59414)  |[코드]()| DATE_FORMAT
+| SQL lv2 | [ 중복 제거하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59408)  |[코드]()| DISTINCT
 | SQL lv1 | [ 조건에 맞는 도서 리스트 출력하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/144853)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level1/%EC%A1%B0%EA%B1%B4%EC%97%90%20%EB%A7%9E%EB%8A%94%20%EB%8F%84%EC%84%9C%20%EB%A6%AC%EC%8A%A4%ED%8A%B8%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.SQL)| SUBSTRING
 | SQL lv1 | [ 어린 동물 찾기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59037)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level1/%EC%96%B4%EB%A6%B0%20%EB%8F%99%EB%AC%BC%20%EC%B0%BE%EA%B8%B0.SQL)| WHERE 
 | SQL lv1 | [ 여러 기준으로 정렬하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59404)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level1/%EC%97%AC%EB%9F%AC%20%EA%B8%B0%EC%A4%80%EC%9C%BC%EB%A1%9C%20%EC%A0%95%EB%A0%AC%ED%95%98%EA%B8%B0.SQL)| DESC
