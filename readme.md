@@ -12,7 +12,6 @@
 
 |분류/언어| 문제                                                                             | 내 코드                                                                                                 |비고|
 |-----|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|---
-
 | SQL lv3 | [ 오랜 기간 보호한 동물(1) ](https://school.programmers.co.kr/learn/courses/30/lessons/59044)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EC%98%A4%EB%9E%9C%20%EA%B8%B0%EA%B0%84%20%EB%B3%B4%ED%98%B8%ED%95%9C%20%EB%8F%99%EB%AC%BC(1).SQL)| LEFT OUTER JOIN으로 한쪽 테이블 데이터만 뽑아오기
 | SQL lv2 | [ DATETIME에서 DATE로 형 변환 ](https://school.programmers.co.kr/learn/courses/30/lessons/59414)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level2/DATETIME%EC%97%90%EC%84%9C%20DATE%EB%A1%9C%20%ED%98%95%20%EB%B3%80%ED%99%98.SQL)| DATE_FORMAT
 | SQL lv2 | [ 중복 제거하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59408)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level2/%EC%A4%91%EB%B3%B5%20%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0.SQL)| DISTINCT
