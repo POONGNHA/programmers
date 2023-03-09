@@ -13,7 +13,8 @@
 
 |분류/언어| 문제                                                                             | 내 코드                                                                                                 |비고|
 |-----|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|---
-| SQL lv3 | [ 있었는데요 없었습니다 ](https://school.programmers.co.kr/learn/courses/30/lessons/59043)  |[코드]()| TIMEDIFF() 사용
+| SQL lv3 | [ 조건별로 분류하여 주문상태 출력하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/131113)  |[코드]()| 날짜비교시 그냥 부등호로 비교하면 된다
+| SQL lv3 | [ 있었는데요 없었습니다 ](https://school.programmers.co.kr/learn/courses/30/lessons/59043)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EC%9E%88%EC%97%88%EB%8A%94%EB%8D%B0%EC%9A%94%20%EC%97%86%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.SQL)| TIMEDIFF() 사용
 | SQL lv3 | [ 오랜 기간 보호한 동물(1) ](https://school.programmers.co.kr/learn/courses/30/lessons/59044)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EC%98%A4%EB%9E%9C%20%EA%B8%B0%EA%B0%84%20%EB%B3%B4%ED%98%B8%ED%95%9C%20%EB%8F%99%EB%AC%BC(1).SQL)| LEFT OUTER JOINR과 ISNULL을 사용해 한쪽 테이블 데이터만 뽑아오기
 | SQL lv2 | [ DATETIME에서 DATE로 형 변환 ](https://school.programmers.co.kr/learn/courses/30/lessons/59414)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level2/DATETIME%EC%97%90%EC%84%9C%20DATE%EB%A1%9C%20%ED%98%95%20%EB%B3%80%ED%99%98.SQL)| DATE_FORMAT
 | SQL lv2 | [ 중복 제거하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59408)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level2/%EC%A4%91%EB%B3%B5%20%EC%A0%9C%EA%B1%B0%ED%95%98%EA%B8%B0.SQL)| DISTINCT
