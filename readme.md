@@ -13,7 +13,8 @@
 
 |분류/언어| 문제                                                                             | 내 코드                                                                                                 |비고|
 |-----|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|---
-| SQL lv3 | [ 카테고리 별 도서 판매량 집계하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/144855)  |[코드]()| GROUP BY를 먼저 쓰지 않고 ORDER BY를 쓰면 오류 발생
+| SQL lv3 | [ 없어진 기록 찾기 ](https://school.programmers.co.kr/learn/courses/30/lessons/59042)  |[코드]()| 교집합에서 JOIN의 활용
+| SQL lv3 | [ 카테고리 별 도서 판매량 집계하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/144855)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%20%EB%B3%84%20%EB%8F%84%EC%84%9C%20%ED%8C%90%EB%A7%A4%EB%9F%89%20%EC%A7%91%EA%B3%84%ED%95%98%EA%B8%B0.SQL)| GROUP BY를 먼저 쓰지 않고 ORDER BY를 쓰면 오류 발생
 | SQL lv3 | [ 조건별로 분류하여 주문상태 출력하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/131113)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EC%A1%B0%EA%B1%B4%EB%B3%84%EB%A1%9C%20%EB%B6%84%EB%A5%98%ED%95%98%EC%97%AC%20%EC%A3%BC%EB%AC%B8%EC%83%81%ED%83%9C%20%EC%B6%9C%EB%A0%A5%ED%95%98%EA%B8%B0.SQL)| 날짜비교시 부등호로 비교 가능
 | SQL lv3 | [ 있었는데요 없었습니다 ](https://school.programmers.co.kr/learn/courses/30/lessons/59043)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EC%9E%88%EC%97%88%EB%8A%94%EB%8D%B0%EC%9A%94%20%EC%97%86%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4.SQL)| TIMEDIFF() 사용
 | SQL lv3 | [ 오랜 기간 보호한 동물(1) ](https://school.programmers.co.kr/learn/courses/30/lessons/59044)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EC%98%A4%EB%9E%9C%20%EA%B8%B0%EA%B0%84%20%EB%B3%B4%ED%98%B8%ED%95%9C%20%EB%8F%99%EB%AC%BC(1).SQL)| LEFT OUTER JOINR과 ISNULL을 사용해 한쪽 테이블 데이터만 뽑아오기
