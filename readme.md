@@ -5,7 +5,7 @@
 ### 2023년 2월 20일 python 2레벨 시작 (시간복잡도)
 ### 2023년 2월 28일 SQL 1레벨 시작
 ### 2023년 3월 07일 SQL 3레벨 시작
-
+### 2023년 3월 20일 SQL 4레벨 시작
 
 ## 코딩테스트 풀이방법 :  문제파악 / 유추파악 / 주요단어 영문이름 선정 / 테스트케이스 / 프로그래밍 순서 / try-on / 실패시 원인 기록
 
@@ -13,6 +13,7 @@
 
 |분류/언어| 문제                                                                             | 내 코드                                                                                                 |비고|
 |-----|--------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|---
+| SQL lv4 | [ 보호소에서 중성화한 동물 ](https://school.programmers.co.kr/learn/courses/30/lessons/59045)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level4/%EB%B3%B4%ED%98%B8%EC%86%8C%EC%97%90%EC%84%9C%20%EC%A4%91%EC%84%B1%ED%99%94%ED%95%9C%20%EB%8F%99%EB%AC%BC.sql)| like 활용문제
 | SQL lv3 | [ 대여 횟수가 많은 자동차들의 월별 대여 횟수 구하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/151139)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EB%8C%80%EC%97%AC%20%ED%9A%9F%EC%88%98%EA%B0%80%20%EB%A7%8E%EC%9D%80%20%EC%9E%90%EB%8F%99%EC%B0%A8%EB%93%A4%EC%9D%98%20%EC%9B%94%EB%B3%84%20%EB%8C%80%EC%97%AC%20%ED%9A%9F%EC%88%98%20%EA%B5%AC%ED%95%98%EA%B8%B0.sql)| 서브쿼리 활용문제
 | SQL lv3 | [ 조회수가 가장 많은 중고거래 게시판의 첨부파일 조회하기 ](https://school.programmers.co.kr/learn/courses/30/lessons/164671)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%EC%A1%B0%ED%9A%8C%EC%88%98%EA%B0%80%20%EA%B0%80%EC%9E%A5%20%EB%A7%8E%EC%9D%80%20%EC%A4%91%EA%B3%A0%EA%B1%B0%EB%9E%98%20%EA%B2%8C%EC%8B%9C%ED%8C%90%EC%9D%98%20%EC%B2%A8%EB%B6%80%ED%8C%8C%EC%9D%BC%20%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0.sql)| 서브쿼리 활용문제
 | SQL lv3 | [ 헤비 유저가 소유한 장소 ](https://school.programmers.co.kr/learn/courses/30/lessons/77487)  |[코드](https://github.com/POONGNHA/programmers/blob/master/query/level3/%ED%97%A4%EB%B9%84%20%EC%9C%A0%EC%A0%80%EA%B0%80%20%EC%86%8C%EC%9C%A0%ED%95%9C%20%EC%9E%A5%EC%86%8C.sql)| 서브쿼리 활용문제
