@@ -35,8 +35,7 @@
 # 변수선언
 # input : n, words :: int, list
 # set :: 중복비교
-# output : result :: list
-# hi 
+# output : result :: list 
 
 def solution(n, words):
     # 중복여부 판정
