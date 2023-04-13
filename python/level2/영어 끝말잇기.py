@@ -36,6 +36,7 @@
 # input : n, words :: int, list
 # set :: 중복비교
 # output : result :: list
+# hi 
 
 def solution(n, words):
     # 중복여부 판정
