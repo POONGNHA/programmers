@@ -25,39 +25,37 @@
 # 정답은 [ 번호, 차례 ] 형태로 return 해주세요.
 # 만약 주어진 단어들로 탈락자가 생기지 않는다면, [0, 0]을 return 해주세요.
 
-# 풀이유추
-# 1. 끝말잇기 - m번째의[-1]과 m+1번째의[0]이 서로 일치해야한다
-# 2. 같은단어를 사용하면 idx를 출력해야한다.
-# 3. 아무 이상없다면 [0,0]을 return한다
-# words를 n의 길이를 가진 m개의 2차원 배열로 생성
-# 1의 조건을 만족하는지 확인
-# 2의 조건을 만족하는지 확인
-# 두 조건을 모두 만족하지 않는다면 3
+# 풀이 유추
+# result는 [m번째 사람, 시행횟수]를 리턴한다
+# 1. words의 원소의 마지막과 그다음 첫번째 원소의 시작char가 같은지 비교한다.
+# 같다면 그 0부터 그 element까지 length를 n으로 나눈 몫+1 을 result[1]에 나머지를 result[0]으로 return 한다.
+# 2. set을 만들어서 길이를 비교한 뒤 다르다면 0번째에서부터 count(i)가 2 이상인 원소를 찾아서 return한다.
+# 3. 탈락자가 나오지 않는다면 [0,0]을 return 한다
 
 # 변수선언
 # input : n, words :: int, list
-# total_list : list
+# set :: 중복비교
 # output : result :: list
 
-# 입출력 예
-# n	words	result
-# 3	["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]	[3,3]
-# 5	["hello", "observe", "effect", "take", "either", "recognize", "encourage", "ensure", "establish", "hang", "gather", "refer", "reference", "estimate", "executive"]	[0,0]
-# 2	["hello", "one", "even", "never", "now", "world", "draw"]	[1,3]
-
-# 풀이
 def solution(n, words):
-    answer = []
-    total_list = []
+    # 중복여부 판정
+    if len(set(words)) == len(words):
+        # 끝말잇기가 되는지 확인
+        stack = []
+        for idx in range(0,len(words)):
+            stack.append(words[idx])
+            if idx != 0 and stack[-2][-1] != words[idx][0] :
+                return [idx%n+1, len(words[:idx])//n +1 ]
+            # 탈락자가 없으면
+        
+    # 중복이 있다면
+    else :
+        stack = []
+        for idx in range(0, len(words)):
+            stack.append(words[idx])
+            if stack.count(words[idx]) >= 2 :
+                return [idx%n +1, len(stack)//n ]
     
-    def div_list(any_list,n):
-        for i in range(0, len(any_list), n): 
-            yield any_list[i:i + n] 
-    
-    total_list = div_list(words,n)
-    
+    return [0,0]
 
-
-    return list(total_list)
-
-print(solution(3,["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]))
+print(solution(2, ["hello", "one", "even", "never", "now", "world", "draw"]))
