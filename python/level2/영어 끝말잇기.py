@@ -37,25 +37,44 @@
 # set :: 중복비교
 # output : result :: list 
 
-def solution(n, words):
-    # 중복여부 판정
-    if len(set(words)) == len(words):
-        # 끝말잇기가 되는지 확인
-        stack = []
-        for idx in range(0,len(words)):
-            stack.append(words[idx])
-            if idx != 0 and stack[-2][-1] != words[idx][0] :
-                return [idx%n+1, len(words[:idx])//n +1 ]
-            # 탈락자가 없으면
+# 풀이 1 (TC 17, 19, 20) 오류
+# def solution(n, words):
+#     # 중복단어 여부 판정
+#     if len(set(words)) == len(words):
+#         # 끝말잇기가 되는지 확인
+#         stack = []
+#         for idx in range(0,len(words)):
+#             stack.append(words[idx])
+#             if idx != 0 and stack[-2][-1] != words[idx][0] :
+#                 return [idx%n+1, len(words[:idx])//n +1 ]
+#             # 탈락자가 없으면
         
-    # 중복이 있다면
-    else :
-        stack = []
-        for idx in range(0, len(words)):
-            stack.append(words[idx])
-            if stack.count(words[idx]) >= 2 :
-                return [idx%n +1, len(stack)//n ]
+#     # 중복이 있다면
+#     else :
+#         stack = []
+#         for idx in range(0, len(words)):
+#             stack.append(words[idx])
+#             if stack.count(words[idx]) >= 2 :
+#                 return [idx%n +1, len(stack)//n ]
     
-    return [0,0]
+#     return [0,0]
 
-print(solution(2, ["hello", "one", "even", "never", "now", "world", "draw"]))
+def solution(n,words):
+    stack = []
+    stack.append(words[0])
+    for idx in range(1, len(words)) :
+        # world chain possibiltiy
+        # duplication check
+        if words[idx][0] != stack[-1][-1] or words[idx] in stack:
+            return [idx%n+1, len(words[:idx])//n +1]
+        if idx == len(words)-1 :
+            return [0,0]    
+        else:
+            stack.append(words[idx])
+        
+
+print(solution(3, ["tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"]))
+
+# 다시 코드를 작성한 이유
+# 이런 두가지 조건이 있을경우 하나의 for문 안에서 시간복잡도를 N으로 줄여서 
+# 한번만 for문을 동작시켜 구현하는것이 최고의 풀이인것 같다. 
