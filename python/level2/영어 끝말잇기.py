@@ -78,3 +78,4 @@ print(solution(3, ["tank", "kick", "know", "wheel", "land", "dream", "mother", "
 # 다시 코드를 작성한 이유
 # 이런 두가지 조건이 있을경우 하나의 for문 안에서 시간복잡도를 N으로 줄여서 
 # 한번만 for문을 동작시켜 구현하는것이 최고의 풀이인것 같다. 
+# git commit test
